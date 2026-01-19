@@ -12,3 +12,4 @@
 [refactor] 코드 개선
 [docs] 문서
 [chore] 설정/기타
+![alt text](image.png)
