@@ -21,5 +21,10 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse(f"You're voting on question {question_id}.")
 
+# def aa():
+# 	return HttpResponse("polls/aa.html")
+
+def aa(request):
+    return render(request, "polls/aa.html")
 
     
