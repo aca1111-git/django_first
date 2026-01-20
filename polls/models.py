@@ -5,8 +5,9 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
     def __str__(self):
-        return self.question_text   # object로 보이지 않고 문자열로 보임
-
+        # return self.question_text   # object로 보이지 않고 문자열로 보임
+        return f"{self.id} - {self.question_text} - {self.pub_date}"
+        
     def was_published_recently(self):
         from django.utils import timezone
         import datetime

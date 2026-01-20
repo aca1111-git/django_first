@@ -1,1 +1,46 @@
 <h2>aa 이거 보이니? </h2>
+
+
+<h3>table_question_list 전체 출력</h3>
+<p>{{ table_question_list }}</p>
+
+
+<h3>table_choice_list 전체 출력</h3>
+<p>{{table_choice_list}}</p>
+
+<h3>Question 하나씩 꺼내기</h3>
+{% for question in table_question_list %}
+  <p>{{ question.question_text }}</p>
+  {{question.pub_date}}
+  <p>{{ question.id }}</p>
+  <p>{{ question }}</p>
+{% endfor %}
+
+<h3>Choice 하나씩 꺼내기</h3>
+{% for Choice in table_choice_list %}
+  <p>{{ Choice.choice_text }}</p>
+  <p>{{ Choice.id }}</p>
+  <p>{{ Choice }}</p>
+{% endfor %}
+<br><br>
+
+{% for choice in table_choice_list %}
+  <p>{{ choice.choice_text }} (question_id: {{ choice.question_id }})</p>
+{% endfor %}
+<p>----------</p>
+
+<h3>choice.question 코드</h3>
+{% for c in table_choice_list %}  
+  <!-- table_choice_list 변수(Choice테이블 덩어리)에서 첫번째 레코드를 C -->
+  <p>{{ c.question.question_text }}</p>  <!-- 이 choice가 속한 질문 -->
+  <p>{{ c.choice_text }}</p>            <!-- choice 자체 -->
+  <hr>
+{% endfor %}
+
+{% if choice %}
+  <p>{{ choice.choice_text }}</p>
+  <p>{{ choice.question.question_text }}</p>
+{% else %}
+  <p>Choice 데이터가 없습니다.</p>
+{% endif %}
+

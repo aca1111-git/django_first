@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Question
+from .models import Question, Choice
 
 
 def index(request):
@@ -25,6 +25,13 @@ def vote(request, question_id):
 # 	return HttpResponse("polls/aa.html")
 
 def aa(request):
-    return render(request, "polls/aa.html")
+	table_question_list = Question.objects.all()
+	table_choice_list = Choice.objects.all()
+
+	context = {
+		"table_question_list" : table_question_list,
+		"table_choice_list" : table_choice_list,
+	}
+	return render(request, "polls/aa.html", context)
 
     
