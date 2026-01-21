@@ -37,9 +37,10 @@
   <hr>
 {% endfor %}
 
-{% if choice %}
-  <p>{{ choice.choice_text }}</p>
-  <p>{{ choice.question.question_text }}</p>
+<h3>choice 첫번째 데이터 출력</h3>
+{% if choice_first %}
+    <p>{{ choice_first.question.question_text }}</p>
+    <p>{{ choice_first.choice_text }}</p>
 {% else %}
   <p>Choice 데이터가 없습니다.</p>
 {% endif %}

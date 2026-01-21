@@ -1,3 +1,7 @@
+{% extends "polls/base.html" %}
+{% load static %}
+
+{% block content %}
 <h1>최근 질문</h1>
 {% if latest_question_list %}
     <ul>
@@ -8,6 +12,7 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}
 
 
     
