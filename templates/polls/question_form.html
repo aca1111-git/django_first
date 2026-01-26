@@ -12,7 +12,7 @@
     name="{{ form.question_text.name }}"
     id="{{ form.question_text.id_for_label }}"
     value="{{ form.question_text.value|default_if_none:'' }}" 
-    placeholder="예: 당신이 좋아하는 음식은 무엇인가요?"
+    placeholder="예: 당신이 좋아하는 음식은 ?"
     required>
  <!-- {{ form.question_text }} 이거 한줄이면 위에 input태그 대체 가능-->
  {{ form.question_text.errors }}
@@ -21,12 +21,12 @@
  <p>
  <label for="{{ form.pub_date.id_for_label }}">게시 날짜와 시간:</label><br>
  <!-- {{ form.pub_date }} -->
- <input type="datetime-local"
-    name="{{ form.pub_date.name }}"
+ <input type="datetime-local" name="{{ form.pub_date.name }}"
     id="{{ form.pub_date.id_for_label }}"
-    value="{{ form.pub_date.value|default_if_none:'' }}"
-    placeholder="예: 2025-06-06T10:00"
+    value="{{ form.pub_date.value|date:'Y-m-d\\TH:i' }}"
+    placeholder="예: 2025-06-06 오전10:00"
     required>
+     <!-- value="{{ form.pub_date.value|default_if_none:'' }}" -->
  {{ form.pub_date.errors }}
  </p>
 

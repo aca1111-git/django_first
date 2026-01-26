@@ -22,4 +22,7 @@ urlpatterns = [
     # http://127.0.0.1:8000/admin/
     path("polls/", include("polls.urls")),
     # http://127.0.0.1:8000/polls/
+
+    path("accounts/", include("accounts.urls")),  #인증 URL 연결
+    path("accounts/", include("django.contrib.auth.urls")), 
 ]
